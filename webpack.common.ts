@@ -1,8 +1,9 @@
-const path = require('path');
+import * as path from "path";
+import { Configuration } from 'webpack';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = {
+const config: Configuration = {
 	context: path.resolve(__dirname, './src'),
 	entry: { app: './index.ts' },
 	module: {
@@ -26,3 +27,5 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist')
 	},
 };
+
+export default config;
