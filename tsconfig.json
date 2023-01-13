@@ -2,14 +2,11 @@
 	"compileOnSave": false,
 	"compilerOptions": {
 		"allowSyntheticDefaultImports": true,
-		"lib": [
-			"dom",
-			"dom.iterable",
-			"esnext"
-		],
+		"lib": ["dom", "dom.iterable", "esnext"],
 		"module": "CommonJS",
 		"moduleResolution": "node",
 		"sourceMap": true,
 		"target": "es6"
-	}
+	},
+	"include": ["src/**/*", ".eslintrc.js", "webpack.common.ts", "webpack.dev.ts", "webpack.prod.ts"]
 }

@@ -1,7 +1,7 @@
-import * as path from "path";
-import { Configuration } from 'webpack';
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+import * as path from 'path';
+import type { Configuration } from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const config: Configuration = {
 	context: path.resolve(__dirname, './src'),
@@ -15,16 +15,16 @@ const config: Configuration = {
 	plugins: [
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
-			template: path.join(__dirname, "src", "index.html"),
+			template: path.join(__dirname, 'src', 'index.html'),
 			title: 'Webpack Typescript Starter',
-			filename: "index.html",
+			filename: 'index.html',
 			chunks: ['vendors', 'app'],
-		})
+		}),
 	],
 	output: {
 		filename: '[name].js',
 		chunkFilename: '[name].js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'dist'),
 	},
 };
 

@@ -1,6 +1,7 @@
-const { merge } = require('webpack-merge');
-import { Configuration } from 'webpack';
+import { merge } from 'webpack-merge';
+import type { Configuration } from 'webpack';
 import common from './webpack.common';
+import 'webpack-dev-server';
 
 const config: Configuration = merge(common, {
 	mode: 'development',
@@ -8,8 +9,8 @@ const config: Configuration = merge(common, {
 	devServer: {
 		open: true,
 		hot: true,
-		port: 8080
-	}
+		port: 8080,
+	},
 });
 
 export default config;
