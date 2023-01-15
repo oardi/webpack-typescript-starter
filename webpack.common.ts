@@ -2,12 +2,19 @@ import * as path from 'path';
 import type { Configuration } from 'webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const config: Configuration = {
 	context: path.resolve(__dirname, './src'),
 	entry: { app: './index.ts' },
 	module: {
-		rules: [{ test: /\.ts?$/, use: 'ts-loader', exclude: /node_modules/ }], // do not forget to change/install your own TS loader
+		rules: [
+			{ test: /\.ts?$/, use: 'ts-loader', exclude: /node_modules/ },
+			{
+				test: /\.s[ac]ss$/i,
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+			},
+		],
 	},
 	resolve: {
 		extensions: ['.ts', '.js'],
@@ -19,6 +26,10 @@ const config: Configuration = {
 			title: 'Webpack Typescript Starter',
 			filename: 'index.html',
 			chunks: ['vendors', 'app'],
+		}),
+		new MiniCssExtractPlugin({
+			filename: 'style.css',
+			chunkFilename: 'style.css',
 		}),
 	],
 	output: {
