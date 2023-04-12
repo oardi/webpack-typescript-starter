@@ -1,15 +1,15 @@
 # webpack-typescript-starter
 
-Simple Webpack 5 + Typescript 4.9.4 Starter Project
+Simple Webpack 5 + Typescript 5.0.4 Starter Project
 
-## Starting Dev Server
+## Start Dev Server
 
 `npm start`
 
-## Building
+## Build
 
 `npm run build`
 
-## Linting
+## Lint
 
 `npm run lint`
