@@ -8,5 +8,11 @@
 		"sourceMap": true,
 		"target": "es6"
 	},
-	"include": ["src/**/*", ".eslintrc.js", "webpack.common.ts", "webpack.dev.ts", "webpack.prod.ts"]
+	"include": [
+		"src/**/*",
+		".eslintrc.js",
+		"webpack.common.ts",
+		"webpack.dev.ts",
+		"webpack.prod.ts"
+	]
 }
