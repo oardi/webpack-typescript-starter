@@ -1,8 +1,8 @@
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import * as path from 'path';
 import type { Configuration } from 'webpack';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const config: Configuration = {
 	context: path.resolve(__dirname, './src'),
@@ -36,6 +36,11 @@ const config: Configuration = {
 		filename: '[name].js',
 		chunkFilename: '[name].js',
 		path: path.resolve(__dirname, 'dist'),
+	},
+	stats: {
+		warningsFilter: [
+			/.*/, // Alle Warnungen unterdrücken
+		],
 	},
 };
 
